@@ -516,7 +516,7 @@ header {
   
   @media (max-width: 480px) {
     .products-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 0fr;
       gap: 15px;
     }
     
@@ -1036,26 +1036,84 @@ footer {
 
 /* Shop Page */
 .shop-page {
-    padding: 60px 0;
-}
-
-.shop-header {
+    padding: 2rem 1rem;
+  }
+  
+  .shop-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.shop-filters {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .shop-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+  }
+  
+  .shop-filters {
     display: flex;
-    gap: 20px;
-}
-
-.filter-dropdown {
-    padding: 10px;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+  }
+  
+  .filter-dropdown {
+    padding: 0.75rem 1rem;
     border: 1px solid var(--border-color);
-    border-radius: 5px;
-}
+    border-radius: 8px;
+    background-color: var(--white);
+    font-size: 0.9rem;
+    flex-grow: 1;
+    min-width: 120px;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (min-width: 640px) {
+    .shop-page {
+      padding: 3rem 1.5rem;
+    }
+    
+    .shop-header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .shop-filters {
+      flex-wrap: nowrap;
+      width: auto;
+      gap: 1rem;
+    }
+    
+    .filter-dropdown {
+      flex-grow: 0;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .shop-page {
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .shop-title {
+      font-size: 2.25rem;
+    }
+    
+    .filter-dropdown {
+      padding: 0.875rem 1.25rem;
+      font-size: 1rem;
+    }
+  }
 
 /* Collections Page */
 .collections-grid {
