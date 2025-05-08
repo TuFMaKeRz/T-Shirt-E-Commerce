@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - ThreadCraft</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Shared Header -->
+    <header>
+        <div class="announcement-bar">
+            <p>FREE SHIPPING ON ORDERS OVER $50 | USE CODE: FREESHIP</p>
+        </div>
+
+        <div class="header-container">
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">THREADCRAFT</a>
+            </div>
+            
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-icons">
+                <a href="search.html" class="search-btn active"><i class="fas fa-search"></i></a>
+                <a href="account.html" class="user-btn"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Page Content -->
+    <main class="search-page">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Search for t-shirts, collections..." id="search-input">
+                    <button id="search-button"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="search-results">
+                    <h2>Search Results for "<span id="search-query">T-Shirts</span>"</h2>
+                    
+                    <div class="results-grid" id="results-grid">
+                        <!-- Results will be populated here -->
+                    </div>
+                    
+                    <div class="no-results" id="no-results" style="display: none;">
+                        <p>No results found. Try a different search term.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Shop</h3>
+            <ul>
+                <li><a href="shop.html">All Products</a></li>
+                <li><a href="shop.html?category=men">Men's Tees</a></li>
+                <li><a href="shop.html?category=women">Women's Tees</a></li>
+                <li><a href="collections.html">New Arrivals</a></li>
+                <li><a href="shop.html?filter=bestsellers">Best Sellers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Help</h3>
+            <ul>
+                <li><a href="contact.html">FAQ</a></li>
+                <li><a href="contact.html">Shipping & Returns</a></li>
+                <li><a href="contact.html">Size Guide</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>About</h3>
+            <ul>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="about.html">Sustainability</a></li>
+                <li><a href="about.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Connect</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 ThreadCraft. All rights reserved.</p>
+        <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+    <div class="mobile-menu-container">
+        <span class="close-mobile-menu">&times;</span>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+            <div class="mobile-social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick View Modal -->
+<div class="modal" id="quick-view-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-product-details" id="modal-product-details">
+            <!-- Product details will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('search-input');
+        const searchButton = document.getElementById('search-button');
+        const resultsGrid = document.getElementById('results-grid');
+        const noResults = document.getElementById('no-results');
+        const searchQuery = document.getElementById('search-query');
+        
+        // Get search term from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q') || 'T-Shirts';
+        searchInput.value = query;
+        searchQuery.textContent = query;
+        
+        // Perform search on page load
+        performSearch(query);
+        
+        // Search button click handler
+        searchButton.addEventListener('click', function() {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+            }
+        });
+        
+        // Enter key handler
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+        
+        function performSearch(query) {
+            fetch('products.json')
+                .then(response => response.json())
+                .then(data => {
+                    const results = data.products.filter(product => 
+                        product.name.toLowerCase().includes(query.toLowerCase()) || 
+                        product.description.toLowerCase().includes(query.toLowerCase())
+                    );
+                    
+                    displayResults(results);
+                });
+        }
+        
+        function displayResults(results) {
+            resultsGrid.innerHTML = '';
+            
+            if (results.length === 0) {
+                noResults.style.display = 'block';
+                return;
+            }
+            
+            noResults.style.display = 'none';
+            
+            results.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                productCard.innerHTML = `
+                    <div class="product-image-container">
+                        <img src="${product.image}" alt="${product.name}" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <div class="product-actions">
+                            <button class="quick-view-btn" data-id="${product.id}">Quick View</button>
+                            <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+                
+                resultsGrid.appendChild(productCard);
+            });
+            
+            // Attach quick view event listeners
+            document.querySelectorAll('.quick-view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    fetch('products.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            const product = data.products.find(p => p.id === productId);
+                            if (product) {
+                                displayProductDetails(product);
+                                document.getElementById('quick-view-modal').style.display = 'block';
+                                document.body.style.overflow = 'hidden';
+                            }
+                        });
+                });
+            });
+            
+            // Attach add to cart event listeners
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productId = parseInt(this.getAttribute('data-id'));
+                    fetch('products.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            const product = data.products.find(p => p.id === productId);
+                            if (product) {
+                                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                                cart.push(product);
+                                localStorage.setItem('cart', JSON.stringify(cart));
+                                updateCartCount();
+                                showNotification(`${product.name} added to cart!`);
+                            }
+                        });
+                });
+            });
+        }
+        
+        function displayProductDetails(product) {
+            const modalProductDetails = document.getElementById('modal-product-details');
+            if (!modalProductDetails) return;
+            
+            modalProductDetails.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="modal-product-image">
+                <div class="modal-product-info">
+                    <h2 class="modal-product-name">${product.name}</h2>
+                    <p class="modal-product-price">$${product.price.toFixed(2)}</p>
+                    <p class="modal-product-description">${product.description}</p>
+                    <ul class="modal-product-details-list">
+                        <li><strong>Details:</strong> ${product.details}</li>
+                        <li><strong>Available Sizes:</strong> ${product.sizes.join(', ')}</li>
+                        <li><strong>Colors:</strong> ${product.colors.join(', ')}</li>
+                    </ul>
+                    <div class="size-selector">
+                        <label>Select Size:</label>
+                        <div class="size-options">
+                            ${product.sizes.map(size => 
+                                `<div class="size-option" data-size="${size}">${size}</div>`
+                            ).join('')}
+                        </div>
+                    </div>
+                    <button class="modal-add-to-cart" data-id="${product.id}">Add to Cart</button>
+                </div>
+            `;
+            
+            // Add event listeners to size options
+            document.querySelectorAll('.size-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.size-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Add event listener to modal add to cart button
+            document.querySelector('.modal-add-to-cart').addEventListener('click', function() {
+                const productId = parseInt(this.getAttribute('data-id'));
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push(product);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartCount();
+                showNotification(`${product.name} added to cart!`);
+                document.getElementById('quick-view-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        function updateCartCount() {
+            const cartCount = document.querySelector('.cart-count');
+            if (cartCount) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cartCount.textContent = cart.length;
+            }
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 10);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+        
+        // Close modal when clicking X
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('quick-view-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('quick-view-modal')) {
+                document.getElementById('quick-view-modal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
+</body>
+</html>

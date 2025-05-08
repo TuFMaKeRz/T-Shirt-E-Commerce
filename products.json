@@ -1,0 +1,44 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Classic White Tee",
+        "price": 19.99,
+        "description": "Premium quality 100% cotton white t-shirt with a comfortable fit.",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["white"],
+        "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+        "details": "Machine wash cold. Tumble dry low. Imported."
+      },
+      {
+        "id": 2,
+        "name": "Black Graphic Tee",
+        "price": 24.99,
+        "description": "Soft black t-shirt with a cool graphic print.",
+        "sizes": ["S", "M", "L", "XL", "XXL"],
+        "colors": ["black"],
+        "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+        "details": "100% cotton. Pre-shrunk. Screen printed design."
+      },
+      {
+        "id": 3,
+        "name": "Vintage Red Tee",
+        "price": 22.99,
+        "description": "Vintage washed red t-shirt with a retro feel.",
+        "sizes": ["M", "L", "XL"],
+        "colors": ["red"],
+        "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+        "details": "Heavyweight 6.1 oz fabric. Classic fit."
+      },
+      {
+        "id": 4,
+        "name": "Black Graphic Tee",
+        "price": 24.99,
+        "description": "Soft black t-shirt with a cool graphic print.",
+        "sizes": ["S", "M", "L", "XL", "XXL"],
+        "colors": ["black"],
+        "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
+        "details": "100% cotton. Pre-shrunk. Screen printed design."
+      }
+    ]
+  }

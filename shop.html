@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - ThreadCraft</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Shared Header -->
+    <header>
+        <div class="announcement-bar">
+            <p>FREE SHIPPING ON ORDERS OVER $50 | USE CODE: FREESHIP</p>
+        </div>
+
+        <div class="header-container">
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <div class="logo">
+                <a href="index.html">THREADCRAFT</a>
+            </div>
+            
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-icons">
+                <a href="search.html" class="search-btn"><i class="fas fa-search"></i></a>
+                <a href="account.html" class="user-btn"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shop Page Content -->
+    <main class="shop-page">
+        <div class="container">
+            <div class="shop-header">
+                <h1>Shop All T-Shirts</h1>
+                <div class="shop-filters">
+                    <select class="filter-dropdown">
+                        <option value="">Sort By</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest</option>
+                        <option value="bestsellers">Bestsellers</option>
+                    </select>
+                    <select class="filter-dropdown">
+                        <option value="">Filter By</option>
+                        <option value="men">Men's</option>
+                        <option value="women">Women's</option>
+                        <option value="unisex">Unisex</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products loaded via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h3>Shop</h3>
+            <ul>
+                <li><a href="shop.html">All Products</a></li>
+                <li><a href="shop.html?category=men">Men's Tees</a></li>
+                <li><a href="shop.html?category=women">Women's Tees</a></li>
+                <li><a href="collections.html">New Arrivals</a></li>
+                <li><a href="shop.html?filter=bestsellers">Best Sellers</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Help</h3>
+            <ul>
+                <li><a href="contact.html">FAQ</a></li>
+                <li><a href="contact.html">Shipping & Returns</a></li>
+                <li><a href="contact.html">Size Guide</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>About</h3>
+            <ul>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="about.html">Sustainability</a></li>
+                <li><a href="about.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Connect</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+            <div class="payment-methods">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 ThreadCraft. All rights reserved.</p>
+        <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+    <div class="mobile-menu-container">
+        <span class="close-mobile-menu">&times;</span>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html">Account</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-footer">
+            <div class="mobile-social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick View Modal -->
+<div class="modal" id="quick-view-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-product-details" id="modal-product-details">
+            <!-- Product details will be loaded here -->
+        </div>
+    </div>
+</div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
